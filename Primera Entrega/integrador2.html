@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>"Integrador Digitalers."</title>
+        <link rel="stylesheet" href="./styles/styles.css">
+    </head>
+<body>
+    <header class="Titulo">
+        <h1>"Integrador Digitalers."</h1>
+    </header>
+
+    <!-- Botones 1 a 3 -->
+    <button class="button" onclick="mostrarPopup(1)">Proyect Owner</button>
+    <button class="button" onclick="mostrarPopup(2)">Scrum Master</button>
+    <button class="button" onclick="mostrarPopup(3)">Business Analyst</button>
+
+    <!-- Botón 4 -->
+    <button class="buttonM" onclick="mostrarPopup(4)">Equipo Tecnico</button>
+
+    <!-- Popups -->
+    <div class="popup" id="popup1">
+        <p>El proyect owner es un rol fundamental <br> dentro del marco de trabajo ágil. <br> Es responsable de maximizar el valor del producto <br> y del trabajo realizado por el equipo de desarrollo.</p>
+        <img src="./images/proyectowner.png" id="image1">
+        <button onclick="cerrarPopup(1)">Cerrar</button>
+    </div>
+
+    <div class="popup" id="popup2">
+        <p>Es el facilitador del equipo Scrum y <br>su principal responsabilidad es <br> asegurarse de que el equipo siga las prácticas y principios de Scrum</p>
+        <img src="./images/scrummaster.png" id="image2">
+        <button onclick="cerrarPopup(2)">Cerrar</button>
+    </div>
+
+    <div class="popup" id="popup3">
+        <p>El Business Analyst asegura que el equipo de desarrollo construya <br> el producto correcto y que este cumpla con los objetivos <br> del negocio y las necesidades del cliente</p>
+        <img src="./images/businessanalyst.png" id="image3">
+        <button onclick="cerrarPopup(3)">Cerrar</button>
+    </div>
+
+    <div class="popup" id="popup4">
+        <p>El es responsable de desarrollar y entregar el producto <br> o servicio durante cada Sprint" <br>  Este equipo está compuesto por individuos con habilidades técnicas necesarias para construir el producto como backend, frontend, QA, etc.</p>
+        <img src="./images/scrum-roles.png" id="image4">
+        <ul>
+            <li><a href="./ceremonias.html" target="_blank">Ceremonias</a></li>
+            <li><a href="./qa.html" target="_blank">QA</a></li>
+        </ul>
+        <button onclick="cerrarPopup(4)">Cerrar</button>
+    </div>
+
+    <script>
+        function mostrarPopup(numero) {
+            const popup = document.getElementById("popup" + numero);
+            popup.style.display = "block";
+        }
+
+        function cerrarPopup(numero) {
+            const popup = document.getElementById("popup" + numero);
+            popup.style.display = "none";
+        }
+    </script>
+</body>
+</html>
