@@ -1,0 +1,227 @@
+1
+
+
+package calificacion;
+
+import java.util.Scanner;
+
+public class Calificacion {
+
+    public static void main(String[] args) {
+       Scanner scanner = new Scanner(System.in);
+
+       
+        System.out.print("Ingrese su nota: ");
+        double nota = scanner.nextDouble();
+
+
+        scanner.close();
+
+      
+        if (nota >= 0 && nota <= 3) {
+            System.out.println("Nota: " + nota);
+            System.out.println("Detalle: Insuficiente");
+            
+        } else if (nota >= 4 && nota <= 6) {
+            System.out.println("Nota: " + nota);
+            System.out.println("Detalle: Suficiente");
+            
+        } else if (nota >= 7 && nota <= 8) {
+            System.out.println("Nota: " + nota);
+            System.out.println("Detalle: Notable");
+            
+        } else if (nota >= 9 && nota <= 10) {
+            System.out.println("Nota: " + nota);
+            System.out.println("Detalle: Sobresaliente");
+            
+        } else {
+            System.out.println("La nota ingresada no es vÃ¡lida. Debe estar en el rango de 0 a 10.");
+        }
+    }
+}
+
+
+
+2
+
+package contadorcifras;
+import java.util.Scanner;
+
+public class ContadorCifras {
+
+   
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese un número entre 0 y 9999: ");
+        int numero = scanner.nextInt();
+
+        scanner.close();
+
+      
+        if (numero >= 0 && numero <= 9999) {
+            String numeroStr = String.valueOf(numero);
+            int cifras = numeroStr.length();
+
+            
+            System.out.println("El número " + numero + " tiene " + cifras + " cifras.");
+        } else {
+            System.out.println("El número no está en el rango válido (0-9999).");
+        }
+    }
+}
+   
+
+3A
+
+
+package ordenarmayoramenor;
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class OrdenarMayorAMenor {
+
+    public static void main(String[] args) {
+       Scanner scanner = new Scanner(System.in);
+
+        // Solicitar al usuario 5 números
+        System.out.println("Ingrese 5 números:");
+        double[] numeros = new double[5];
+        for (int i = 0; i < 5; i++) {
+            System.out.print("Número " + (i + 1) + ": ");
+            numeros[i] = scanner.nextDouble();
+        }
+
+        // Cerrar el Scanner
+        scanner.close();
+
+        // Ordenar los números de mayor a menor
+        Arrays.sort(numeros);
+        for (int i = 4; i >= 0; i--) {
+            System.out.println(numeros[i]);
+        }
+    }
+}
+
+
+3B
+
+package ordenarmenoramayor;
+import java.util.Scanner;
+import java.util.Arrays;
+
+
+public class OrdenarMenorAMayor {
+
+    
+ 
+    public static void main(String[] args) {
+               Scanner scanner = new Scanner(System.in);
+
+        // Solicitar al usuario 5 números
+        System.out.println("Ingrese 5 números:");
+        double[] numeros = new double[5];
+        for (int i = 0; i < 5; i++) {
+            System.out.print("Número " + (i + 1) + ": ");
+            numeros[i] = scanner.nextDouble();
+        }
+
+        // Cerrar el Scanner
+        scanner.close();
+
+        // Ordenar los números de menor a mayor
+        Arrays.sort(numeros);
+        for (int i = 0; i < 5; i++) {
+            System.out.println(numeros[i]);
+        }
+    }
+}
+
+
+4
+
+
+package valorespares;
+import java.util.Scanner;
+
+public class ValoresPares {
+
+    public static void main(String[] args) {
+         // Crear un objeto Scanner para leer la entrada del usuario
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicitar al usuario un número de 3 dígitos
+        int numero;
+        do {
+            System.out.print("Ingrese un número de 3 dígitos (entre 100 y 999): ");
+            numero = scanner.nextInt();
+        } while (numero < 100 || numero > 999);
+
+        // Cerrar el Scanner
+        scanner.close();
+
+        // Imprimir los valores pares desde 0 hasta el número ingresado
+        System.out.println("Valores pares desde 0 hasta " + numero + ":");
+        for (int i = 0; i <= numero; i += 2) {
+            System.out.println(i);
+        }
+    }
+}
+
+
+5
+
+package calculadorasueldos;
+
+import java.util.Scanner;
+public class CalculadoraSueldos {
+
+  
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicitar al usuario el número de sueldos a ingresar
+        System.out.print("Ingrese el número de sueldos a ingresar: ");
+        int N = scanner.nextInt();
+
+        // Verificar que N sea mayor que 0
+        if (N <= 0) {
+            System.out.println("El número de sueldos debe ser mayor que 0.");
+            return; // Salir del programa
+        }
+
+        // Declarar variables para el sueldo más alto, el sueldo más bajo y la suma de sueldos
+        double sueldoMaximo = Double.MIN_VALUE;
+        double sueldoMinimo = Double.MAX_VALUE;
+        double sumaSueldos = 0.0;
+
+        // Solicitar al usuario ingresar los sueldos y calcular estadísticas
+        for (int i = 1; i <= N; i++) {
+            System.out.print("Ingrese el sueldo " + i + ": ");
+            double sueldo = scanner.nextDouble();
+
+            // Actualizar el sueldo más alto y el sueldo más bajo
+            if (sueldo > sueldoMaximo) {
+                sueldoMaximo = sueldo;
+            }
+            if (sueldo < sueldoMinimo) {
+                sueldoMinimo = sueldo;
+            }
+
+            // Sumar el sueldo a la suma total
+            sumaSueldos += sueldo;
+        }
+
+        // Calcular el promedio de sueldos
+        double promedioSueldos = sumaSueldos / N;
+
+        // Cerrar el Scanner
+        scanner.close();
+
+        // Imprimir resultados
+        System.out.println("Sueldo más alto: " + sueldoMaximo);
+        System.out.println("Sueldo más bajo: " + sueldoMinimo);
+        System.out.println("Promedio de sueldos: " + promedioSueldos);
+    }
+}
+
